@@ -11,7 +11,7 @@ body{
 
     background:
     linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
-    url('../pexels-nguyen-hung-2148391851-30592867.jpg');
+    url('pexels-nguyen-hung-2148391851-30592867.jpg');
 
     background-size:cover;
     background-position:center;
