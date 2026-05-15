@@ -1,0 +1,228 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
+    url('../images/pexels-nguyen-hung-2148391851-30592867.jpg');
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+}
+
+.container{
+    width:100%;
+    height:100vh;
+
+    display:flex;
+}
+
+/* LEFT SIDE */
+
+.left-panel{
+    width:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:40px;
+
+    position:relative;
+}
+
+.left-panel::before{
+    content:"";
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    background:#ff0066;
+    filter:blur(140px);
+    opacity:0.3;
+
+    border-radius:50%;
+}
+
+.branding{
+    position:relative;
+    z-index:1;
+}
+
+.branding h1{
+    font-size:48px;
+    font-weight:700;
+    line-height:1.1;
+
+    margin-bottom:15px;
+
+    background:linear-gradient(to right,#ffffff,#ff80bf);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.branding p{
+    width:100%;
+    max-width:350px;
+
+    font-size:15px;
+    line-height:1.6;
+
+    color:#cbd5e1;
+}
+
+/* RIGHT SIDE */
+
+.right-panel{
+    width:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+}
+
+/* CARD */
+
+.signup-card{
+    width:100%;
+    max-width:380px;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.1);
+    backdrop-filter:blur(18px);
+
+    box-shadow:0 8px 25px rgba(0,0,0,0.4);
+}
+
+.signup-card h2{
+    font-size:26px;
+    margin-bottom:18px;
+    text-align:center;
+}
+
+/* INPUT */
+
+.input-group{
+    position:relative;
+    margin-bottom:14px;
+}
+
+.input-group input{
+    width:100%;
+    padding:10px 8px;
+
+    background:transparent;
+    border:none;
+    border-bottom:2px solid #555;
+
+    outline:none;
+
+    color:white;
+    font-size:13px;
+}
+
+.input-group label{
+    position:absolute;
+    left:8px;
+    top:10px;
+
+    color:#94a3b8;
+
+    font-size:13px;
+
+    transition:0.3s;
+}
+
+.input-group input:focus ~ label,
+.input-group input:valid ~ label{
+    top:-10px;
+    font-size:11px;
+    color:#ff4da6;
+}
+
+.input-group input:focus{
+    border-bottom:2px solid #ff4da6;
+}
+
+/* BUTTON */
+
+button{
+    width:100%;
+    padding:12px;
+
+    border:none;
+    border-radius:10px;
+
+    background:linear-gradient(135deg,#ff0066,#ff4da6);
+
+    color:white;
+    font-size:14px;
+    font-weight:600;
+
+    cursor:pointer;
+}
+
+button:hover{
+    transform:scale(1.02);
+}
+
+/* LOGIN */
+
+.login-link{
+    margin-top:12px;
+    text-align:center;
+
+    font-size:13px;
+    color:#cbd5e1;
+}
+
+.login-link a{
+    color:#ff4da6;
+    text-decoration:none;
+    font-weight:600;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+    .container{
+        flex-direction:column;
+    }
+
+    .left-panel{
+        width:100%;
+        height:180px;
+    }
+
+    .branding h1{
+        font-size:32px;
+    }
+
+    .right-panel{
+        width:100%;
+    }
+
+    .signup-card{
+        max-width:350px;
+    }
+}

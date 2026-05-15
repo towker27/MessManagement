@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Mess Dashboard</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
+    url('../images/blur-close-up-cutlery-370984.jpg');
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+}
+/* SIDEBAR */
+.sidebar{
+    width:250px;
+    padding:25px;
+
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(18px);
+
+    border-right:1px solid rgba(255,255,255,0.1);
+    
+    display:flex;
+    flex-direction:column;
+    height:100vh;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:700;
+    color:#ff4da6;
+    margin-bottom:30px;
+}
+
+.sidebar a{
+    display:block;
+    padding:12px;
+    margin:10px 0;
+
+    color:#cbd5e1;
+    text-decoration:none;
+
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.sidebar a:hover{
+    background:#ff4da6;
+    color:white;
+}
+
+/* MAIN */
+.main{
+    flex:1;
+    padding:30px;
+}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:25px;
+}
+
+/* CARD STYLE */
+.card{
+    height:100px;
+    border-radius:20px;
+
+    position:relative;
+    overflow:hidden;
+
+    box-shadow:0 10px 35px rgba(0,0,0,0.3);
+
+    cursor:pointer;
+    transition:0.4s;
+
+    display:flex;
+    align-items:flex-end;
+}
+
+/* HOVER */
+.card:hover{
+    transform:translateY(-8px) scale(1.02);
+}
+
+/* DARK OVERLAY */
+.card::before{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+
+    background:rgba(0, 0, 0, 0.55);
+    top:0;
+    left:0;
+}
+
+/* TEXT */
+.card-content{
+    position:relative;
+    z-index:2;
+
+    padding:20px;
+}
+
+.card h2{
+    font-size:22px;
+}
+
+.card h1{
+    font-size:30px;
+    color:#ff4da6;
+}
+
+/* BACKGROUND IMAGES */
+.members{
+    background-image:url("images/WhatsApp Image 2026-05-14 at 3.07.58 PM.jpeg");
+    background-size:cover;
+    background-position:center;
+}
+
+.meals{
+    background-image:url("images/WhatsApp Image 2026-05-14 at 3.43.42 PM.jpeg");
+    background-size:cover;
+    background-position:center;
+}
+
+.expense{
+    background-image:url("images/94b2f59b-b92b-4e00-ad9c-616dffb36405.jpg");
+    background-size:cover;
+    background-position:center;
+}
+
+
+/* QUICK ACTION */
+.actions{
+    margin-top:30px;
+}
+
+.actions h2{
+    margin-bottom:15px;
+}
+
+.action-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.action{
+    padding:18px;
+    text-align:center;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.15);
+
+    transition:0.3s;
+    cursor:pointer;
+    font-weight:500;
+}
+
+.action:hover{
+    background:linear-gradient(135deg,#ff0066,#ff4da6);
+}
+
+/* WELCOME SECTION */
+.welcome{
+    margin-bottom:40px;
+    text-align:center;
+}
+
+.welcome h1{
+    font-size:42px;
+    font-weight:800;
+    margin-bottom:15px;
+    color:#ac94a7;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    text-shadow:0 8px 20px rgba(0,0,0,0.25);
+    font-family: 'Italianno', cursive;
+}
+
+.welcome p{
+    font-size:18px;
+    color:#cbd5e1;
+    line-height:1.6;
+    max-width:760px;
+    margin:0 auto;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .grid{
+        grid-template-columns:1fr;
+    }
+
+    .action-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .sidebar{
+        display:none;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <div class="logo">🍽 Smart Mess</div>
+
+    <a href="#">Dashboard</a>
+    <a href="#">Members</a>
+    <a href="#">Meals</a>
+    <a href="#">Expense</a>
+    <a href="#">Report</a>
+    <a href="login.html">Logout</a>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+    <!-- WELCOME SECTION -->
+    <div class="welcome">
+        <h1>Welcome to Mess Management System</h1>
+        <p>Manage Members • Meals • Expenses • Reports in one place</p>
+    </div>
+
+    <!-- BIG CARDS -->
+    <div class="grid">
+
+        <div class="card members">
+            <div class="card-content">
+                <h2>Members</h2>
+                <h1 id="members">12</h1>
+            </div>
+        </div>
+
+        <div class="card meals">
+            <div class="card-content">
+                <h2>Meals</h2>
+                <h1 id="meals">340</h1>
+            </div>
+        </div>
+
+        <div class="card expense">
+            <div class="card-content">
+                <h2>Expense</h2>
+                <h1 id="expense">18500</h1>
+            </div>
+        </div>
+
+        <div class="card report">
+            <div class="card-content">
+                <h2>Report</h2>
+                <h1>View</h1>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- QUICK ACTION -->
+    <div class="actions">
+
+        <h2>Quick Actions</h2>
+
+        <div class="action-grid">
+
+            <div class="action">👤 Members</div>
+            <div class="action">🍛 Meals</div>
+            <div class="action">💰 Expense</div>
+            <div class="action">📊 Report</div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
